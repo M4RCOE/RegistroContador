@@ -40,7 +40,7 @@
         echo '        <div class="modal-body d-flex justify-content-between align-items-center flex-column text-center">';
                      echo "<h3>".$user['username']."</h3>";
                      echo "<h3>".$user['email']."</h3>";
-                     echo "<input id=contador2".$user['id']." value='0:0:0' style='text-align:center; width:100px' readonly/>";
+                     echo "<input id=contador2".$user['id']." value='0:0:0' style='text-align:center; width:100px' hidden/>";
         echo '        </div>';
         echo '   <div class="modal-footer d-flex justify-content-center">';
         echo '        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>';

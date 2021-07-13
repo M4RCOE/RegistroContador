@@ -1,0 +1,2 @@
+Dentro de la carpeta de application está la carpeta de config y dentro de esta carpeta está el archivo config.php, ahí se cambia la base_url.
+En la carpeta de js hay un archivo llamado funciones, en la funcion de insertar y en la de modificar hay que cambiar el URL.
