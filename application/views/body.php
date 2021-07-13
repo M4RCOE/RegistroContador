@@ -24,8 +24,8 @@
         echo "<td><input id=contador".$user['id']." value='0:0:0' style='text-align:center' readonly/></td>";
         echo "<td value='botones'>";
     ?>
-        <button class="btn btn-dark" id=<?php echo $user['id']?> onclick="accionBoton(this)" style="width:100px">Iniciar</button>
-        <button type="button" class="btn btn-danger" onclick="accionBotonDos(this)">Enviar</button>
+        <button class="btn btn-dark" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
+        <button type="button" class="btn btn-danger" onclick="peticionModificar(this)">Enviar</button>
     <?php
         echo"</td>";
         echo "</tr>";

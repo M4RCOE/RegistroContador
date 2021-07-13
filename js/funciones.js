@@ -1,3 +1,4 @@
+    //Agregar onclick a la tabla de prestadores de servicio
     var $table = $("#table");
     $('#table td').each(function(e,value) {
         value.onclick = function(e){
@@ -6,9 +7,10 @@
     });
 
 
-    function accionBotonDos(e){
+    //Petición de insertar con php
+    function peticionInsertar(e){
         $.ajax({
-            url: 'http://localhost:82/Contador/js/respuesta.php',
+            url: 'http://localhost:82/Contador/php/respuesta.php',
             type: 'POST',
             data: $("#formulario").serialize(),
             success: function(res){
@@ -17,8 +19,29 @@
         });
     }
 
+    //Petición de modificar con php
+    function peticionModificar(e){
+        f = new Date();
+        $("#nombre")[0].value = e.parentNode.parentNode.childNodes[1].innerHTML;
+        $("#fecha")[0].value = f.getFullYear()+"-"+(f.getMonth()+1)+"-"+f.getDate();
+        $("#tiempo")[0].value = e.parentNode.parentNode.childNodes[3].childNodes[0].value; 
+        $("#tiempofinal")[0].value = f.getHours()+":"+f.getMinutes()+":"+f.getSeconds();
+        $.ajax({
+            url: 'http://localhost:82/Contador/php/respuesta2.php',
+            type: 'POST',
+            data: $("#formulario").serialize(),
+            success: function(res){
+                $("#respuesta").html(res);
+            }
+        }); 
+        $("#tiempo")[0].value = e.parentNode.parentNode.childNodes[3].childNodes[0].value = "0:0:0"; 
+        e.parentNode.childNodes[1].innerHTML = "Iniciar";
 
-    function accionBoton(e){
+    }
+
+    
+    //Acción de botón para activar el contador
+    function accionContador(e){
         f = new Date();
         $("#nombre")[0].value = e.parentNode.parentNode.childNodes[1].innerHTML;
         $("#fecha")[0].value = f.getFullYear()+"-"+(f.getMonth()+1)+"-"+f.getDate();
@@ -29,6 +52,7 @@
         let tiempoArray = contador.value.split(':');
         let tiempo = new Date("2021","07","09",tiempoArray[0],tiempoArray[1],tiempoArray[2]);
         if(botonContador.innerHTML === "Iniciar"){
+            peticionInsertar(e);
             botonContador.innerHTML = "Detener";
             intervalo[e.id] = setInterval(() => {
                 tiempo = new Date(tiempo.getTime()+1000)

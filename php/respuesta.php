@@ -5,7 +5,6 @@
     $password = "";
     $sql = "mysql:host=$servername;dbname=$database;";
     $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-    // Create connection
 
     $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -22,7 +21,7 @@
         'tiempofinal' => $_POST['tiempofinal']
     );
 
-    if($datos['nombre']!=""){
+    if($datos['nombre']!=""&&$datos['fecha']!=""&&$datos['tiempoinicial']!=""){
         $insert = "INSERT INTO contador (";
         $values = " VALUES (";
      
@@ -31,18 +30,13 @@
             $values .= " '$value', ";
         }
      
-        // Eliminar las ultimas comas y cerrar los parentesis
         $insert = substr($insert, 0, -2).')';
         $values = substr($values, 0, -2).')';
      
         $sql = $insert.$values; 
-        echo $sql;
         
         if (($result = mysqli_query($conn, $sql)) === false) {
-            echo 'no se pudo';
             die(mysqli_error($conn));
-        }else{
-            echo $result;
         }
     }
     
