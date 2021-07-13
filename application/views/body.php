@@ -1,8 +1,5 @@
-<div class="row p-0 m-0">
-  <div class="col d-flex align-items-center">
-    <h4>Aside</h4>
-  </div>
-  <div class="col-lg-10 col-md-10 m-0 p-0">
+<div class="d-flex justify-content-center">
+  <div class="container text-center mw-80 d-flex flex-column align-items-centerjustify-content-center p-0 m-0">
     <div class="table-responsive border border-right-0 border-left-0 border-bottom-0 border-top-5 border-white">
       <table class="table table-hover table-striped align-middle" id="table">
         <thead class="table-dark">
@@ -25,22 +22,40 @@
               echo "<td value='botones'>";
           ?>
             <button class="btn btn-dark m-1" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
-            <button type="button" class="btn btn-danger m-1" onclick="peticionModificar(this)">Enviar</button>
+            <button class="btn btn-danger m-1" onclick="accionContador2(this)">Enviar</button>
           <?php
             echo"</td>";
             echo "</tr>";
             echo "<tr class='espaciado'></tr>";   
-            echo '  <div class="modal fade" id="mostrarModal'.$user['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
-            echo '    <div class="modal-dialog modal-dialog-centered">';
+            echo '  <div class="modal fade bd-example-modal-lg" id="mostrarModal'.$user['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
+            echo '    <div class="modal-dialog modal-lg modal-dialog-centered">';
             echo '      <div class="modal-content">';
             echo '        <div class="modal-header">';
             echo '            <h5 class="modal-title col-11 text-center" id="exampleModalLabel">Datos del practicante</h5>';
             echo '            <button type="button" class="btn-close col" data-bs-dismiss="modal" aria-label="Close"></button>';
             echo '        </div>';
             echo '      <div class="modal-body d-flex justify-content-between align-items-center flex-column text-center">';
-                    echo "  <h3>".$user['username']."</h3>";
-                    echo "  <h3>".$user['email']."</h3>";
-                    echo "  <input id=contador2".$user['id']." value='0:0:0' style='text-align:center; width:100px' hidden/>";
+
+            echo '<nav>';
+            echo'<div class="nav nav-tabs" id="nav-tab'.$user['id'].'" role="tablist">';
+            echo'  <a class="nav-link active" id="nav-dia-tab'.$user['id'].'" data-bs-toggle="tab" href="#nav-dia'.$user['id'].'" role="tab" aria-controls="nav-dia" aria-selected="true">Día</a>';
+            echo'  <a onclick="aber(this)" class="nav-link" id="nav-semana-tab'.$user['id'].'" data-bs-toggle="tab" href="#nav-semana'.$user['id'].'" role="tab" aria-controls="nav-semana" aria-selected="false">Semana</a>';
+            echo'  <a class="nav-link" id="nav-mes-tab'.$user['id'].'" data-bs-toggle="tab" href="#nav-mes'.$user['id'].'" role="tab" aria-controls="nav-mes" aria-selected="false">Mes</a>';
+            echo'</div>';
+            echo'</nav>';
+            echo '<div class="tab-content" id="nav-tabContent">';
+            echo '<div class="tab-pane fade show active" id="nav-dia'.$user['id'].'" role="tabpanel" aria-labelledby="nav-dia-tab">';
+            echo'    <p>Día</p>';
+            echo '</div>';
+            echo '  <div class="tab-pane fade" id="nav-semana'.$user['id'].'" role="tabpanel" aria-labelledby="nav-semana-tab">';
+            echo '<div style="width:300px; height:300px">';
+            echo '        <canvas id="myChart'.$user['id'].'" width="50" height="50"></canvas>';
+            echo '</div>';
+            echo '  </div>';
+            echo ' <div class="tab-pane fade" id="nav-mes'.$user['id'].'" role="tabpanel" aria-labelledby="nav-mes-tab">';
+            echo '    <p>Mes</p>';
+            echo '  </div>';
+            echo '</div>';
             echo '       </div>';
             echo '       <div class="modal-footer d-flex justify-content-center">';
             echo '          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>';

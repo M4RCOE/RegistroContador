@@ -21,11 +21,7 @@
 
     //Petición de modificar con php
     function peticionModificar(e){
-        f = new Date();
-        $("#nombre")[0].value = e.parentNode.parentNode.childNodes[1].innerHTML;
-        $("#fecha")[0].value = f.getFullYear()+"-"+(f.getMonth()+1)+"-"+f.getDate();
-        $("#tiempo")[0].value = e.parentNode.parentNode.childNodes[3].childNodes[0].value; 
-        $("#tiempofinal")[0].value = f.getHours()+":"+f.getMinutes()+":"+f.getSeconds();
+        
         $.ajax({
             url: 'http://localhost:82/Contador/php/respuesta2.php',
             type: 'POST',
@@ -34,11 +30,27 @@
                 $("#respuesta").html(res);
             }
         }); 
+        
         $("#tiempo")[0].value = e.parentNode.parentNode.childNodes[3].childNodes[0].value = "0:0:0"; 
         e.parentNode.childNodes[1].innerHTML = "Iniciar";
 
     }
 
+    function accionContador2(e){
+        f = new Date();
+        $("#nombre")[0].value = e.parentNode.parentNode.childNodes[1].innerHTML;
+        $("#fecha")[0].value = f.getFullYear()+"-"+(f.getMonth()+1)+"-"+f.getDate();
+        $("#tiempo")[0].value = e.parentNode.parentNode.childNodes[3].childNodes[0].value; 
+        $("#tiempofinal")[0].value = f.getHours()+":"+f.getMinutes()+":"+f.getSeconds();
+        clearInterval(intervalo[e.parentNode.childNodes[1].id])
+        peticionModificar(e);
+    }
+
+    function aber(e){
+        cadena = e.parentNode.id;
+        let indice = cadena.replace("nav-tab","");
+        
+    }
     
     //Acción de botón para activar el contador
     function accionContador(e){
