@@ -22,7 +22,7 @@
               echo "<td value='botones'>";
           ?>
             <button class="btn btn-dark m-1 rounded-pill" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
-            <button class="btn btn-danger m-1 rounded-pill" onclick="accionContador2(this)">Enviar</button>
+            <button class="btn btn-danger m-1 rounded-pill" style="width:100px" onclick="accionContador2(this)">Enviar</button>
           <?php
             echo"</td>";
             echo "</tr>";
