@@ -21,8 +21,8 @@
               echo "<td hidden></td>";
               echo "<td value='botones'>";
           ?>
-            <button class="btn btn-dark m-1 rounded-pill" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
-            <button class="btn btn-danger m-1 rounded-pill" style="width:100px" onclick="accionContador2(this)">Enviar</button>
+            <button class="btn btn-dark m-1 rounded-pill border border-2 border-dark" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
+            <button class="btn btn-danger m-1 rounded-pill border border-2 border-dark" style="width:100px" onclick="accionContador2(this)">Enviar</button>
           <?php
             echo"</td>";
             echo "</tr>";
@@ -77,7 +77,7 @@
             <input id="tiempoinicial" name="tiempoinicial" type="text" value="" hidden>
             <input id="tiempofinal" name="tiempofinal" type="text" value="" hidden> <br> 
         </form>
-<!-- <button onclick="consulta()">Calar</button>
+<button onclick="consulta(this)">José Ricardo Baeza Candor</button>
 <div id="respuesta">
       
-</div> -->
+</div> 

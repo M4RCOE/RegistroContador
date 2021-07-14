@@ -2,6 +2,15 @@
     var $table = $("#table");
     $('#table td').each(function(e,value) {
         value.onclick = function(e){
+            console.log(e.target.parentNode.childNodes[1].childNodes[0].nodeValue);
+            $.ajax({
+                url: 'http://localhost:82/Contador/php/respuesta3.php',
+                type: 'POST',
+                data: {nombre: e.target.parentNode.childNodes[1].childNodes[0].nodeValue},
+                success: function(res){
+                    $("#respuesta").html(res);
+                }
+            });
             $("#mostrarModal"+e.target.parentNode.firstChild.innerHTML).modal('show');
         } 
     });
