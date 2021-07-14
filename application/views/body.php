@@ -77,7 +77,6 @@
             <input id="tiempoinicial" name="tiempoinicial" type="text" value="" hidden>
             <input id="tiempofinal" name="tiempofinal" type="text" value="" hidden> <br> 
         </form>
-<button onclick="consulta(this)">José Ricardo Baeza Candor</button>
 <div id="respuesta">
       
 </div> 
