@@ -6,8 +6,8 @@
           <tr>
             <th scope="col">ID</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Contador</th>
+              <th scope="col" hidden>Correo</th>
+              <th scope="col" hidden>Contador</th>
               <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -16,13 +16,13 @@
             foreach($users_servicio as $key => $user):
               echo "<tr class='datos' data-toggle='modal' data-id=".$user['id']."data-target='#mostarModal".$user['id']."'>";
               echo "<td>".$user['id']."</td>";
-              echo "<td>".$user['username']."</td>";
-              echo "<td>".$user['email']."</td>";
-              echo "<td><input id=contador".$user['id']." value='0:0:0' style='text-align:center' readonly/></td>";
+              echo "<td>".$user['username']."<br><input id=contador".$user['id']." value='0:0:0' style='text-align:center' hidden/><p class='d-inline' style='font-size:12px'>Actualmente: </p><p class='d-inline' style='font-size:12px' id='tiempohoy".$user['id']."'>0:0:0</p></td>";
+              echo "<td hidden>".$user['email']."</td>";
+              echo "<td hidden></td>";
               echo "<td value='botones'>";
           ?>
-            <button class="btn btn-dark m-1" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
-            <button class="btn btn-danger m-1" onclick="accionContador2(this)">Enviar</button>
+            <button class="btn btn-dark m-1 rounded-pill" id=<?php echo $user['id']?> onclick="accionContador(this)" style="width:100px">Iniciar</button>
+            <button class="btn btn-danger m-1 rounded-pill" onclick="accionContador2(this)">Enviar</button>
           <?php
             echo"</td>";
             echo "</tr>";
@@ -73,10 +73,11 @@
 <form id='formulario' method="POST">
             <input id="nombre" name="nombre" type="text" value="" hidden>
             <input id="fecha" name="fecha" type="text" value="" hidden> 
-            <input id="tiempo" name="tiempo" type="text" value="" hidden> 
+            <input id="tiempo" name="tiempo" type="text" value="0:0:0" hidden> 
             <input id="tiempoinicial" name="tiempoinicial" type="text" value="" hidden>
             <input id="tiempofinal" name="tiempofinal" type="text" value="" hidden> <br> 
         </form>
+<!-- <button onclick="consulta()">Calar</button>
 <div id="respuesta">
       
-</div>
+</div> -->

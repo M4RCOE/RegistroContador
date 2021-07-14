@@ -15,6 +15,7 @@
     <script src="<?php echo base_url('js/jquery-3.6.0.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/funciones.js'); ?>"></script>
     <script>
+    
     var ctx = document.getElementById('myChart1').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'bar',
