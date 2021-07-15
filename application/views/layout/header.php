@@ -15,12 +15,9 @@
   <script src="<?php echo base_url('js/jquery-3.6.0.min.js'); ?>"></script>
   <!--  Importación de chartjs  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!--  Declaración de variables para intervalo de contadores y fecha glables  -->
-  <script>
-    var intervalo = {};
-    var f; 
-  </script>
+  <!--  Importación de script para inicializar variables y valor de tiempo de la semana  -->
+  <script src="<?php echo base_url('js/inicializar.js'); ?>"></script>
+  
 </head>
 
 <body class="d-flex flex-column min-vh-100">

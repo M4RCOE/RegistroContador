@@ -17,7 +17,15 @@
             foreach($users_servicio as $key => $user):
               echo "<tr class='datos' data-toggle='modal' data-id=".$user['id']."data-target='#mostarModal".$user['id']."'>";
               echo    "<td>".$user['id']."</td>";
-              echo    "<td style='text-align:left'>".$user['username']."<br><input id=contador".$user['id']." value='0:0:0' style='text-align:center' hidden/><p class='d-inline' style='font-size:12px'>Actualmente: </p><p class='d-inline' style='font-size:12px' id='tiempohoy".$user['id']."'>0:0:0</p></td>";
+              echo    "<td style='text-align:left'>".$user['username']."<br>
+                        <input id=contador".$user['id']." value='0:0:0' style='text-align:center' hidden/>"
+                        
+                        /*  Párrafo para horas semanales  */
+                        ."<p class='d-inline' style='font-size:12px'>Horas Semanalmente: </p><p class='d-inline' style='font-size:12px' id='tiemposemana".$user['id']."'>0</p>"
+                        /*  Párrafo para horas actuales  */
+                        ."<p class='d-inline' style='font-size:12px'> - Actualmente: </p><p class='d-inline' style='font-size:12px' id='tiempohoy".$user['id']."'>0:0:0</p>"
+
+                      ."</td>";
               echo    "<td hidden>".$user['email']."</td>";
               echo    "<td hidden></td>";
               echo    "<td style='text-align:right' value='botones'>";

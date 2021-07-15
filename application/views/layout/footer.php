@@ -8,9 +8,9 @@
         </footer>
     </div> 
 
-    <!--  Importación de script de funciones propias  -->
-    <script src="<?php echo base_url('js/funciones.js'); ?>"></script>
     <!--  Importación de script de gráficas  -->
     <script src="<?php echo base_url('js/graficos.js'); ?>"></script>
+    <!--  Importación de script de funciones propias  -->
+    <script src="<?php echo base_url('js/funciones.js'); ?>"></script>
 </body>
 </html>

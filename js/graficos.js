@@ -1,14 +1,14 @@
 var ctx = {};
 for (chart of $('[name="chart"]')) {
 	ctx[chart.id] = $('#'+chart.id)[0].getContext("2d");
-	let myChart = new Chart(ctx[chart.id], {
+	charts[chart.id] = new Chart(ctx[chart.id], {
 		type: "bar",
 		data: {
 			labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"],
 			datasets: [
 				{
 					label: "Horas trabajadas",
-					data: [12, 19, 3, 5, 2],
+					data: [0,0,0,0,0],
 					backgroundColor: [
 						"rgba(255, 99, 132, 0.2)",
 						"rgba(54, 162, 235, 0.2)",

@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="d-flex flex-column min-vh-100 justify-content-center">
 <div class="container">
       <div class="row justify-content-center">
-        <div class="col-4 text-center border border-3 border-dark pt-5 pb-5">
+        <div class="col-4 text-center border border-3 border-dark rounded pt-5 pb-5">
           <h2 class="text-center mt-5" >Inicio de sesión</h2>
           <form class="mb-5" action="<?php echo site_url('user_controller/login');?>" method="POST">
               <input type="text" name="username" class="form-control mt-4 mb-4" placeholder="Usuario">

@@ -14,7 +14,7 @@
         }
         echo json_encode($todo);
     } else {
-        echo "0 results";
+        echo "0";
     }
     $conn->close();
 
