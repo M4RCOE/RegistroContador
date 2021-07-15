@@ -10,6 +10,18 @@ $("#table td").each(function (e, value) {
 					nombre: e.target.parentNode.childNodes[1].childNodes[0].nodeValue,
 				},
 				success: function (res) {
+                    let datos = JSON.parse(res);
+                    console.log(datos);
+                    datos.forEach(e => {
+                        let array = [];
+                        let d = e.tiempo;
+                        arrayTiempo = d.split(':');
+                        arrayTiempo.forEach(e => 
+                            array.push(parseInt(e))
+                        );
+                        let horas = array[0] + (array[1]/60) + (array[2]/3600);
+                        console.log(horas);
+                    });
 					$("#respuesta").html(res);
 				},
 			});
