@@ -1,5 +1,5 @@
 <?php 
-    include('conexion.php')
+    include('conexion.php');
 
     $datos = array(
         'nombre' => $_POST['nombre'],
@@ -9,7 +9,7 @@
         'tiempofinal' => $_POST['tiempofinal']
     );
 
-    if($datos['nombre']!=""&&$datos['fecha']!=""&&$datos['tiempoinicial']!=""){
+    if($datos['nombre']!="" && $datos['fecha']!="" && $datos['tiempoinicial']!=""){
         $insert = "INSERT INTO contador (";
         $values = " VALUES (";
      

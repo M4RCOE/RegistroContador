@@ -9,7 +9,7 @@ class Controlador extends CI_Controller {
 		if($this->session->has_userdata('user')){
 			$data['users_servicio'] = $this->users_servicio_model->obtener_users();
 			$this->load->view('layout/header');
-			$this->load->view('body',$data);
+			$this->load->view('tabla_datos',$data);
 			$this->load->view('layout/footer');
 		}else{
 			$this->load->view('login_view');
